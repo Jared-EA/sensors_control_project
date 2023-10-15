@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jared/sensors_control_project/catkin_ws/install/setup.sh
