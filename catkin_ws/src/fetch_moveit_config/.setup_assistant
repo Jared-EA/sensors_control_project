@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: fetch_description
+    relative_path: robots/fetch.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/fetch.srdf
+  CONFIG:
+    author_name: Jared
+    author_email: Jared.E.Anderson@outlook.com
+    generated_timestamp: 1697449668

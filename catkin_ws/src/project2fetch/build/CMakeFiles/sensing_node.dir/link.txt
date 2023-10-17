@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/sensing_node.dir/src/rgbd_sensing_node.cpp.o  -o devel/lib/project2fetch/sensing_node 
