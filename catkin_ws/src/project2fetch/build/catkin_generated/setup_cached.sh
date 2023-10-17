@@ -11,5 +11,6 @@ export CMAKE_PREFIX_PATH="/home/jared/sensors_control_project/catkin_ws/src/proj
 export LD_LIBRARY_PATH="/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build'
+export PYTHONPATH="/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/jared/sensors_control_project/catkin_ws/src/project2fetch:$ROS_PACKAGE_PATH"

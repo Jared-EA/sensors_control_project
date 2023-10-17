@@ -11,7 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   std_msgs
+  moveit_core
+  moveit_ros_planning
+  moveit_ros_planning_interface
 )
+find_package(Eigen3 REQUIRED)
+
 
 
 ## System dependencies are found with CMake's conventions
@@ -136,6 +141,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 
 add_executable(robot_main src/main.cpp src/fetchrobot.cpp)
+add_executable(move_robot src/move_arm_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -150,9 +156,12 @@ add_executable(robot_main src/main.cpp src/fetchrobot.cpp)
 ## Specify libraries to link a library or executable target against
 
 target_link_libraries(robot_main
-  ${catkin_LIBRARIES}
+  ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 )
 
+target_link_libraries(move_robot
+  ${catkin_LIBRARIES} ${Boost_LIBRARIES}
+)
 #############
 ## Install ##
 #############
