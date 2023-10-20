@@ -49,6 +49,14 @@ zdiff = (zmax-zmin)/2;
 
 GraspingPos = [(xmin+xdiff),(ymin+ydiff),(zmin+zdiff)]
 
+%% Publishing
+[pub,msg] = rospublisher('position','geometry_msgs/Point');
+
+msg.X = GraspingPos(1,1);
+msg.Y = GraspingPos(1,2);
+msg.Z = GraspingPos(1,3);
+send(pub,msg);
+
 %% RGB image
 % rgb = rossubscriber('head_camera/rgb/image_raw','DataFormat','struct');
 % rgb_data = receive(rgb,1);
