@@ -149,7 +149,6 @@ robot_arm:
   projection_evaluator: joints(shoulder_pan_joint,shoulder_lift_joint)
   longest_valid_segment_fraction: 0.005
 gripper:
-  default_planner_config: RRT
   planner_configs:
     - SBL
     - EST
@@ -175,4 +174,32 @@ gripper:
     - SPARS
     - SPARStwo
   projection_evaluator: joints(l_gripper_finger_joint,r_gripper_finger_joint)
+  longest_valid_segment_fraction: 0.005
+arm_w/torso:
+  default_planner_config: RRT
+  planner_configs:
+    - SBL
+    - EST
+    - LBKPIECE
+    - BKPIECE
+    - KPIECE
+    - RRT
+    - RRTConnect
+    - RRTstar
+    - TRRT
+    - PRM
+    - PRMstar
+    - FMT
+    - BFMT
+    - PDST
+    - STRIDE
+    - BiTRRT
+    - LBTRRT
+    - BiEST
+    - ProjEST
+    - LazyPRM
+    - LazyPRMstar
+    - SPARS
+    - SPARStwo
+  projection_evaluator: joints(torso_lift_joint,shoulder_pan_joint)
   longest_valid_segment_fraction: 0.005

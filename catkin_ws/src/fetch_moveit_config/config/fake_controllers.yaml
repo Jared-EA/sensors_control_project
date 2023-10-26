@@ -14,6 +14,17 @@ controller_list:
     joints:
       - l_gripper_finger_joint
       - r_gripper_finger_joint
+  - name: fake_arm_w/torso_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - torso_lift_joint
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - upperarm_roll_joint
+      - elbow_flex_joint
+      - forearm_roll_joint
+      - wrist_flex_joint
+      - wrist_roll_joint
 initial:  # Define initial robot poses.
   - group: robot_arm
     pose: home

@@ -131,6 +131,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/jared/sensors_control_project/catkin_ws/build/gtest/cmake_install.cmake")
+  include("/home/jared/sensors_control_project/catkin_ws/build/fetch_moveit_config/cmake_install.cmake")
+  include("/home/jared/sensors_control_project/catkin_ws/build/fetchit_challenge/cmake_install.cmake")
+  include("/home/jared/sensors_control_project/catkin_ws/build/fetch_gazebo/cmake_install.cmake")
   include("/home/jared/sensors_control_project/catkin_ws/build/project2fetch/cmake_install.cmake")
 
 endif()

@@ -3,6 +3,6 @@ prefix=/home/jared/sensors_control_project/catkin_ws/devel
 Name: project2fetch
 Description: Description of project2fetch
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/jared/sensors_control_project/catkin_ws/devel/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: message_runtime

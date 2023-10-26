@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/jared/sensors_control_project/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -79,6 +67,27 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -102,26 +111,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target install
 install: preinstall
@@ -168,448 +168,715 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-project2fetch/CMakeFiles/robot_main.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/robot_main.dir/rule
-.PHONY : project2fetch/CMakeFiles/robot_main.dir/rule
+project2fetch/CMakeFiles/project2fetch_gennodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_gennodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_gennodejs.dir/rule
 
 # Convenience name for target.
-robot_main: project2fetch/CMakeFiles/robot_main.dir/rule
+project2fetch_gennodejs: project2fetch/CMakeFiles/project2fetch_gennodejs.dir/rule
 
-.PHONY : robot_main
+.PHONY : project2fetch_gennodejs
 
 # fast build rule for target.
-robot_main/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/build
-.PHONY : robot_main/fast
+project2fetch_gennodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_gennodejs.dir/build.make project2fetch/CMakeFiles/project2fetch_gennodejs.dir/build
+.PHONY : project2fetch_gennodejs/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : project2fetch/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+project2fetch/CMakeFiles/project2fetch_generate_messages_nodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_generate_messages_nodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: project2fetch/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+project2fetch_generate_messages_nodejs: project2fetch/CMakeFiles/project2fetch_generate_messages_nodejs.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : project2fetch_generate_messages_nodejs
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+project2fetch_generate_messages_nodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/project2fetch_generate_messages_nodejs.dir/build
+.PHONY : project2fetch_generate_messages_nodejs/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : project2fetch/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_lisp: project2fetch/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+object_recognition_msgs_generate_messages_cpp: project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_lisp
+.PHONY : object_recognition_msgs_generate_messages_cpp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+object_recognition_msgs_generate_messages_cpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_cpp.dir/build
+.PHONY : object_recognition_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : project2fetch/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+project2fetch/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_cpp: project2fetch/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+moveit_msgs_generate_messages_py: project2fetch/CMakeFiles/moveit_msgs_generate_messages_py.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_cpp
+.PHONY : moveit_msgs_generate_messages_py
 
 # fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
+moveit_msgs_generate_messages_py/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/moveit_msgs_generate_messages_py.dir/build
+.PHONY : moveit_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : project2fetch/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+project2fetch/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: project2fetch/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+moveit_msgs_generate_messages_lisp: project2fetch/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_py
+.PHONY : moveit_msgs_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+moveit_msgs_generate_messages_lisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/moveit_msgs_generate_messages_lisp.dir/build
+.PHONY : moveit_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : project2fetch/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+project2fetch/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : project2fetch/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+visualization_msgs_generate_messages_py: project2fetch/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_nodejs
+.PHONY : visualization_msgs_generate_messages_py
 
 # fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
+visualization_msgs_generate_messages_py/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : project2fetch/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+project2fetch/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_lisp: project2fetch/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+octomap_msgs_generate_messages_cpp: project2fetch/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_lisp
+.PHONY : octomap_msgs_generate_messages_cpp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
+octomap_msgs_generate_messages_cpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/octomap_msgs_generate_messages_cpp.dir/build
+.PHONY : octomap_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : project2fetch/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+project2fetch/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: project2fetch/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+visualization_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : visualization_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : project2fetch/CMakeFiles/roscpp_generate_messages_py.dir/rule
+project2fetch/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: project2fetch/CMakeFiles/roscpp_generate_messages_py.dir/rule
+moveit_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : moveit_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/roscpp_generate_messages_py.dir/build.make project2fetch/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+moveit_msgs_generate_messages_nodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/build
+.PHONY : moveit_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : project2fetch/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+project2fetch/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: project2fetch/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+visualization_msgs_generate_messages_lisp: project2fetch/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : visualization_msgs_generate_messages_lisp
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/roscpp_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : project2fetch/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+project2fetch/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+shape_msgs_generate_messages_cpp: project2fetch/CMakeFiles/shape_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_nodejs
+.PHONY : shape_msgs_generate_messages_cpp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
+shape_msgs_generate_messages_cpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/shape_msgs_generate_messages_cpp.dir/build
+.PHONY : shape_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : project2fetch/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+project2fetch/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
+.PHONY : project2fetch/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_lisp: project2fetch/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+shape_msgs_generate_messages_eus: project2fetch/CMakeFiles/shape_msgs_generate_messages_eus.dir/rule
 
-.PHONY : roscpp_generate_messages_lisp
+.PHONY : shape_msgs_generate_messages_eus
 
 # fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
+shape_msgs_generate_messages_eus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/shape_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/shape_msgs_generate_messages_eus.dir/build
+.PHONY : shape_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+project2fetch/CMakeFiles/moveit_ros_planning_gencfg.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+moveit_ros_planning_gencfg: project2fetch/CMakeFiles/moveit_ros_planning_gencfg.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_cpp
+.PHONY : moveit_ros_planning_gencfg
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+moveit_ros_planning_gencfg/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make project2fetch/CMakeFiles/moveit_ros_planning_gencfg.dir/build
+.PHONY : moveit_ros_planning_gencfg/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : project2fetch/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+project2fetch/CMakeFiles/project2fetch_genpy.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_genpy.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_genpy.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: project2fetch/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+project2fetch_genpy: project2fetch/CMakeFiles/project2fetch_genpy.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_eus
+.PHONY : project2fetch_genpy
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+project2fetch_genpy/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_genpy.dir/build.make project2fetch/CMakeFiles/project2fetch_genpy.dir/build
+.PHONY : project2fetch_genpy/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : project2fetch/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+project2fetch/CMakeFiles/project2fetch_gencpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_gencpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_gencpp.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_cpp: project2fetch/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+project2fetch_gencpp: project2fetch/CMakeFiles/project2fetch_gencpp.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_cpp
+.PHONY : project2fetch_gencpp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
+project2fetch_gencpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_gencpp.dir/build.make project2fetch/CMakeFiles/project2fetch_gencpp.dir/build
+.PHONY : project2fetch_gencpp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : project2fetch/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+project2fetch/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_lisp: project2fetch/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+shape_msgs_generate_messages_lisp: project2fetch/CMakeFiles/shape_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_lisp
+.PHONY : shape_msgs_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
+shape_msgs_generate_messages_lisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/shape_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/shape_msgs_generate_messages_lisp.dir/build
+.PHONY : shape_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : project2fetch/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+project2fetch/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_cpp: project2fetch/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+shape_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_cpp
+.PHONY : shape_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
+shape_msgs_generate_messages_nodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/build
+.PHONY : shape_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+project2fetch/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_eus: project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+moveit_msgs_generate_messages_eus: project2fetch/CMakeFiles/moveit_msgs_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_eus
+.PHONY : moveit_msgs_generate_messages_eus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
+moveit_msgs_generate_messages_eus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/moveit_msgs_generate_messages_eus.dir/build
+.PHONY : moveit_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+project2fetch/CMakeFiles/project2fetch_geneus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_geneus.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_geneus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+project2fetch_geneus: project2fetch/CMakeFiles/project2fetch_geneus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_lisp
+.PHONY : project2fetch_geneus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+project2fetch_geneus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_geneus.dir/build.make project2fetch/CMakeFiles/project2fetch_geneus.dir/build
+.PHONY : project2fetch_geneus/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : project2fetch/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_cpp: project2fetch/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+object_recognition_msgs_generate_messages_lisp: project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : std_msgs_generate_messages_cpp
+.PHONY : object_recognition_msgs_generate_messages_lisp
 
 # fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
+object_recognition_msgs_generate_messages_lisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/build
+.PHONY : object_recognition_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+project2fetch/CMakeFiles/project2fetch_generate_messages_eus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_generate_messages_eus.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+project2fetch_generate_messages_eus: project2fetch/CMakeFiles/project2fetch_generate_messages_eus.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_nodejs
+.PHONY : project2fetch_generate_messages_eus
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+project2fetch_generate_messages_eus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/project2fetch_generate_messages_eus.dir/build
+.PHONY : project2fetch_generate_messages_eus/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+project2fetch/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-rosgraph_msgs_generate_messages_py: project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+visualization_msgs_generate_messages_cpp: project2fetch/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : rosgraph_msgs_generate_messages_py
+.PHONY : visualization_msgs_generate_messages_cpp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
+visualization_msgs_generate_messages_cpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : project2fetch/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: project2fetch/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+object_recognition_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : object_recognition_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+object_recognition_msgs_generate_messages_nodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_nodejs.dir/build
+.PHONY : object_recognition_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : project2fetch/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
+.PHONY : project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+object_recognition_msgs_generate_messages_py: project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : object_recognition_msgs_generate_messages_py
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+object_recognition_msgs_generate_messages_py/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/build
+.PHONY : object_recognition_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : project2fetch/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+project2fetch/CMakeFiles/gripper_node.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/gripper_node.dir/rule
+.PHONY : project2fetch/CMakeFiles/gripper_node.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_nodejs: project2fetch/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+gripper_node: project2fetch/CMakeFiles/gripper_node.dir/rule
 
-.PHONY : roscpp_generate_messages_nodejs
+.PHONY : gripper_node
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+gripper_node/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/gripper_node.dir/build.make project2fetch/CMakeFiles/gripper_node.dir/build
+.PHONY : gripper_node/fast
 
 # Convenience name for target.
-project2fetch/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : project2fetch/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
+.PHONY : project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_py: project2fetch/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+object_recognition_msgs_generate_messages_eus: project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/rule
 
-.PHONY : std_msgs_generate_messages_py
+.PHONY : object_recognition_msgs_generate_messages_eus
 
 # fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/std_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
+object_recognition_msgs_generate_messages_eus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build
+.PHONY : object_recognition_msgs_generate_messages_eus/fast
 
-src/fetchrobot.o: src/fetchrobot.cpp.o
+# Convenience name for target.
+project2fetch/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
+.PHONY : project2fetch/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
 
-.PHONY : src/fetchrobot.o
+# Convenience name for target.
+octomap_msgs_generate_messages_eus: project2fetch/CMakeFiles/octomap_msgs_generate_messages_eus.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_eus
+
+# fast build rule for target.
+octomap_msgs_generate_messages_eus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/octomap_msgs_generate_messages_eus.dir/build
+.PHONY : octomap_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+moveit_msgs_generate_messages_cpp: project2fetch/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : moveit_msgs_generate_messages_cpp
+
+# fast build rule for target.
+moveit_msgs_generate_messages_cpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/moveit_msgs_generate_messages_cpp.dir/build
+.PHONY : moveit_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/project2fetch_generate_messages_lisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_generate_messages_lisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+project2fetch_generate_messages_lisp: project2fetch/CMakeFiles/project2fetch_generate_messages_lisp.dir/rule
+
+.PHONY : project2fetch_generate_messages_lisp
+
+# fast build rule for target.
+project2fetch_generate_messages_lisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/project2fetch_generate_messages_lisp.dir/build
+.PHONY : project2fetch_generate_messages_lisp/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_lisp: project2fetch/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_lisp
+
+# fast build rule for target.
+octomap_msgs_generate_messages_lisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build.make project2fetch/CMakeFiles/octomap_msgs_generate_messages_lisp.dir/build
+.PHONY : octomap_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/shape_msgs_generate_messages_py.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+.PHONY : project2fetch/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+shape_msgs_generate_messages_py: project2fetch/CMakeFiles/shape_msgs_generate_messages_py.dir/rule
+
+.PHONY : shape_msgs_generate_messages_py
+
+# fast build rule for target.
+shape_msgs_generate_messages_py/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/shape_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/shape_msgs_generate_messages_py.dir/build
+.PHONY : shape_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/project2fetch_generate_messages_cpp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_generate_messages_cpp.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+project2fetch_generate_messages_cpp: project2fetch/CMakeFiles/project2fetch_generate_messages_cpp.dir/rule
+
+.PHONY : project2fetch_generate_messages_cpp
+
+# fast build rule for target.
+project2fetch_generate_messages_cpp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_generate_messages_cpp.dir/build.make project2fetch/CMakeFiles/project2fetch_generate_messages_cpp.dir/build
+.PHONY : project2fetch_generate_messages_cpp/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project2fetch/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_nodejs: project2fetch/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+octomap_msgs_generate_messages_nodejs/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make project2fetch/CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
+.PHONY : octomap_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
+.PHONY : project2fetch/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+octomap_msgs_generate_messages_py: project2fetch/CMakeFiles/octomap_msgs_generate_messages_py.dir/rule
+
+.PHONY : octomap_msgs_generate_messages_py
+
+# fast build rule for target.
+octomap_msgs_generate_messages_py/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/octomap_msgs_generate_messages_py.dir/build.make project2fetch/CMakeFiles/octomap_msgs_generate_messages_py.dir/build
+.PHONY : octomap_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+.PHONY : project2fetch/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+
+# Convenience name for target.
+moveit_ros_manipulation_gencfg: project2fetch/CMakeFiles/moveit_ros_manipulation_gencfg.dir/rule
+
+.PHONY : moveit_ros_manipulation_gencfg
+
+# fast build rule for target.
+moveit_ros_manipulation_gencfg/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build.make project2fetch/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
+.PHONY : moveit_ros_manipulation_gencfg/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/project2fetch_genlisp.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_genlisp.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_genlisp.dir/rule
+
+# Convenience name for target.
+project2fetch_genlisp: project2fetch/CMakeFiles/project2fetch_genlisp.dir/rule
+
+.PHONY : project2fetch_genlisp
+
+# fast build rule for target.
+project2fetch_genlisp/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_genlisp.dir/build.make project2fetch/CMakeFiles/project2fetch_genlisp.dir/build
+.PHONY : project2fetch_genlisp/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/project2fetch_generate_messages_py.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_generate_messages_py.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_generate_messages_py.dir/rule
+
+# Convenience name for target.
+project2fetch_generate_messages_py: project2fetch/CMakeFiles/project2fetch_generate_messages_py.dir/rule
+
+.PHONY : project2fetch_generate_messages_py
+
+# fast build rule for target.
+project2fetch_generate_messages_py/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_generate_messages_py.dir/build.make project2fetch/CMakeFiles/project2fetch_generate_messages_py.dir/build
+.PHONY : project2fetch_generate_messages_py/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+.PHONY : project2fetch/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_eus: project2fetch/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_eus
+
+# fast build rule for target.
+visualization_msgs_generate_messages_eus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build.make project2fetch/CMakeFiles/visualization_msgs_generate_messages_eus.dir/build
+.PHONY : visualization_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/rule
+.PHONY : project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/rule
+
+# Convenience name for target.
+_project2fetch_generate_messages_check_deps_goalStatus: project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/rule
+
+.PHONY : _project2fetch_generate_messages_check_deps_goalStatus
+
+# fast build rule for target.
+_project2fetch_generate_messages_check_deps_goalStatus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/build.make project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/build
+.PHONY : _project2fetch_generate_messages_check_deps_goalStatus/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/project2fetch_generate_messages.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/project2fetch_generate_messages.dir/rule
+.PHONY : project2fetch/CMakeFiles/project2fetch_generate_messages.dir/rule
+
+# Convenience name for target.
+project2fetch_generate_messages: project2fetch/CMakeFiles/project2fetch_generate_messages.dir/rule
+
+.PHONY : project2fetch_generate_messages
+
+# fast build rule for target.
+project2fetch_generate_messages/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/project2fetch_generate_messages.dir/build.make project2fetch/CMakeFiles/project2fetch_generate_messages.dir/build
+.PHONY : project2fetch_generate_messages/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/move_robot.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/move_robot.dir/rule
+.PHONY : project2fetch/CMakeFiles/move_robot.dir/rule
+
+# Convenience name for target.
+move_robot: project2fetch/CMakeFiles/move_robot.dir/rule
+
+.PHONY : move_robot
+
+# fast build rule for target.
+move_robot/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/build
+.PHONY : move_robot/fast
+
+# Convenience name for target.
+project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/rule:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/rule
+.PHONY : project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/rule
+
+# Convenience name for target.
+_project2fetch_generate_messages_check_deps_gripperStatus: project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/rule
+
+.PHONY : _project2fetch_generate_messages_check_deps_gripperStatus
+
+# fast build rule for target.
+_project2fetch_generate_messages_check_deps_gripperStatus/fast:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/build.make project2fetch/CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/build
+.PHONY : _project2fetch_generate_messages_check_deps_gripperStatus/fast
+
+src/arm_motion.o: src/arm_motion.cpp.o
+
+.PHONY : src/arm_motion.o
 
 # target to build an object file
-src/fetchrobot.cpp.o:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/src/fetchrobot.cpp.o
-.PHONY : src/fetchrobot.cpp.o
+src/arm_motion.cpp.o:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/src/arm_motion.cpp.o
+.PHONY : src/arm_motion.cpp.o
 
-src/fetchrobot.i: src/fetchrobot.cpp.i
+src/arm_motion.i: src/arm_motion.cpp.i
 
-.PHONY : src/fetchrobot.i
+.PHONY : src/arm_motion.i
 
 # target to preprocess a source file
-src/fetchrobot.cpp.i:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/src/fetchrobot.cpp.i
-.PHONY : src/fetchrobot.cpp.i
+src/arm_motion.cpp.i:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/src/arm_motion.cpp.i
+.PHONY : src/arm_motion.cpp.i
 
-src/fetchrobot.s: src/fetchrobot.cpp.s
+src/arm_motion.s: src/arm_motion.cpp.s
 
-.PHONY : src/fetchrobot.s
+.PHONY : src/arm_motion.s
 
 # target to generate assembly for a file
-src/fetchrobot.cpp.s:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/src/fetchrobot.cpp.s
-.PHONY : src/fetchrobot.cpp.s
+src/arm_motion.cpp.s:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/src/arm_motion.cpp.s
+.PHONY : src/arm_motion.cpp.s
 
-src/main.o: src/main.cpp.o
+src/gripper_node.o: src/gripper_node.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/gripper_node.o
 
 # target to build an object file
-src/main.cpp.o:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/gripper_node.cpp.o:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/gripper_node.dir/build.make project2fetch/CMakeFiles/gripper_node.dir/src/gripper_node.cpp.o
+.PHONY : src/gripper_node.cpp.o
 
-src/main.i: src/main.cpp.i
+src/gripper_node.i: src/gripper_node.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/gripper_node.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/gripper_node.cpp.i:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/gripper_node.dir/build.make project2fetch/CMakeFiles/gripper_node.dir/src/gripper_node.cpp.i
+.PHONY : src/gripper_node.cpp.i
 
-src/main.s: src/main.cpp.s
+src/gripper_node.s: src/gripper_node.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/gripper_node.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/robot_main.dir/build.make project2fetch/CMakeFiles/robot_main.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/gripper_node.cpp.s:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/gripper_node.dir/build.make project2fetch/CMakeFiles/gripper_node.dir/src/gripper_node.cpp.s
+.PHONY : src/gripper_node.cpp.s
+
+src/move_arm_node.o: src/move_arm_node.cpp.o
+
+.PHONY : src/move_arm_node.o
+
+# target to build an object file
+src/move_arm_node.cpp.o:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/src/move_arm_node.cpp.o
+.PHONY : src/move_arm_node.cpp.o
+
+src/move_arm_node.i: src/move_arm_node.cpp.i
+
+.PHONY : src/move_arm_node.i
+
+# target to preprocess a source file
+src/move_arm_node.cpp.i:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/src/move_arm_node.cpp.i
+.PHONY : src/move_arm_node.cpp.i
+
+src/move_arm_node.s: src/move_arm_node.cpp.s
+
+.PHONY : src/move_arm_node.s
+
+# target to generate assembly for a file
+src/move_arm_node.cpp.s:
+	cd /home/jared/sensors_control_project/catkin_ws/build && $(MAKE) -f project2fetch/CMakeFiles/move_robot.dir/build.make project2fetch/CMakeFiles/move_robot.dir/src/move_arm_node.cpp.s
+.PHONY : src/move_arm_node.cpp.s
 
 # Help Target
 help:
@@ -617,45 +884,64 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... robot_main"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... test"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... rebuild_cache"
-	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... list_install_components"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... roscpp_generate_messages_eus"
 	@echo "... edit_cache"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_cpp"
+	@echo "... project2fetch_gennodejs"
+	@echo "... project2fetch_generate_messages_nodejs"
+	@echo "... object_recognition_msgs_generate_messages_cpp"
+	@echo "... moveit_msgs_generate_messages_py"
+	@echo "... moveit_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_py"
+	@echo "... octomap_msgs_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_nodejs"
+	@echo "... moveit_msgs_generate_messages_nodejs"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... test"
+	@echo "... shape_msgs_generate_messages_cpp"
+	@echo "... shape_msgs_generate_messages_eus"
+	@echo "... moveit_ros_planning_gencfg"
+	@echo "... project2fetch_genpy"
+	@echo "... project2fetch_gencpp"
+	@echo "... shape_msgs_generate_messages_lisp"
+	@echo "... shape_msgs_generate_messages_nodejs"
+	@echo "... moveit_msgs_generate_messages_eus"
+	@echo "... project2fetch_geneus"
+	@echo "... object_recognition_msgs_generate_messages_lisp"
+	@echo "... project2fetch_generate_messages_eus"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... object_recognition_msgs_generate_messages_nodejs"
+	@echo "... object_recognition_msgs_generate_messages_py"
+	@echo "... rebuild_cache"
+	@echo "... gripper_node"
+	@echo "... object_recognition_msgs_generate_messages_eus"
+	@echo "... octomap_msgs_generate_messages_eus"
+	@echo "... moveit_msgs_generate_messages_cpp"
+	@echo "... project2fetch_generate_messages_lisp"
+	@echo "... octomap_msgs_generate_messages_lisp"
+	@echo "... shape_msgs_generate_messages_py"
+	@echo "... project2fetch_generate_messages_cpp"
+	@echo "... install/strip"
+	@echo "... octomap_msgs_generate_messages_nodejs"
+	@echo "... octomap_msgs_generate_messages_py"
+	@echo "... moveit_ros_manipulation_gencfg"
+	@echo "... project2fetch_genlisp"
+	@echo "... project2fetch_generate_messages_py"
+	@echo "... visualization_msgs_generate_messages_eus"
+	@echo "... _project2fetch_generate_messages_check_deps_goalStatus"
+	@echo "... project2fetch_generate_messages"
 	@echo "... install"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... src/fetchrobot.o"
-	@echo "... src/fetchrobot.i"
-	@echo "... src/fetchrobot.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... move_robot"
+	@echo "... _project2fetch_generate_messages_check_deps_gripperStatus"
+	@echo "... src/arm_motion.o"
+	@echo "... src/arm_motion.i"
+	@echo "... src/arm_motion.s"
+	@echo "... src/gripper_node.o"
+	@echo "... src/gripper_node.i"
+	@echo "... src/gripper_node.s"
+	@echo "... src/move_arm_node.o"
+	@echo "... src/move_arm_node.i"
+	@echo "... src/move_arm_node.s"
 .PHONY : help
 
 

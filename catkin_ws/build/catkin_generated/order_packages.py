@@ -2,4 +2,4 @@
 source_root_dir = '/home/jared/sensors_control_project/catkin_ws/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/melodic'.split(';') if '/opt/ros/melodic' != '' else []
+underlay_workspaces = '/home/jared/catkin_ws/devel;/home/jared/sensors_control_project/catkin_ws/devel;/opt/ros/melodic'.split(';') if '/home/jared/catkin_ws/devel;/home/jared/sensors_control_project/catkin_ws/devel;/opt/ros/melodic' != '' else []
