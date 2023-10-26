@@ -2,6 +2,8 @@
 
 #include "ros/ros.h"
 #include <thread>
+#include "arm_motion.h"
+
 
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/LaserScan.h>
@@ -18,7 +20,11 @@
 #include <moveit_msgs/CollisionObject.h>
 #include <moveit_visual_tools/moveit_visual_tools.h>
 
-#include "gripper.cpp"
+//custom msgs
+// #include "project2fetch/goalStatus.h"
+// #include <project2fetch/goalStatus.msg>
+
+// #include "gripper.cpp"
 
 
 // Create a structure for the target points
@@ -30,73 +36,106 @@ struct TargetPoint {
 
 int main(int argc, char **argv)
 {
+    // Initialize ROS node
+    ros::init(argc, argv, "move_arm_node");
+    ROS_INFO("ROS node initiated");
+
+    // Create a ROS NodeHandle
+    ros::NodeHandle nh;
+    ROS_INFO("ROS handle created");
+
+    ROS_INFO("Main loop started");
+
     // List of target points
     std::vector<TargetPoint> targets = {
         {0.5, 0.25, 0.5},
         {0.6, 0.0,  0.4},
         // Add more points as needed
     };
+    // Make sure there is a drop-off point for each target point
+    std::vector<TargetPoint> dropOffPoints = {
+        {1.0, 0.0, 0.5},
+        {1.1, 0.1, 0.4}
+        
+    };
 
-    GripperController gripper;  // Create gripper controller
+    // Check that there are equal numbers of target points and drop-off points
+    if (targets.size() != dropOffPoints.size()) {
+        ROS_ERROR("The number of target points and drop-off points must be equal.");
+        return 1;
+    }
+    
 
-    // Initialize ROS node
-    ros::init(argc, argv, "move_arm_node");
-    ros::NodeHandle nh;
+    // GripperController gripper;  // Create gripper controller
+
+    
+
+    // Create a publisher for goal status
+    // ros::Publisher goal_status_pub = nh.advertise<project2fetch::goalStatus>("goal_status", 10);
+    // Create a publisher for target points
+    // ros::Publisher target_points_pub = nh.advertise<geometry_msgs::Point>("target_points", 10);
+    // Create a publisher for gripper position
+    // ros::Publisher gripper_publisher = nh.advertise<control_msgs::GripperCommandActionGoal>("/gripper_controller/gripper_action/goal",1);
+    
+    // Create an instance of ArmMotion
+    ArmMotion arm_motion;
 
     // Start a spin thread
     ros::AsyncSpinner spinner(1);
     spinner.start();
 
-    // Setup move group
-    static const std::string PLANNING_GROUP = "robot_arm"; // Change this to your robot's planning group name
-    moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
-
-    // Create a MoveGroupInterface for the gripper
-    moveit::planning_interface::MoveGroupInterface gripper_group("gripper");
-
-
-    // You can set the reference frame for your robot here
-    move_group.setPoseReferenceFrame("base_link");
-
-    for (size_t i = 0; i < targets.size(); ++i)
-    {
-        const TargetPoint &target = targets[i];
-        // Specify goal pose
+    for (size_t i = 0; i < targets.size(); i++) {
+        // Convert TargetPoint to geometry_msgs::Pose
         geometry_msgs::Pose target_pose;
-        target_pose.orientation.w = 1.0; // This is just an example, adjust the orientation as needed
-        target_pose.position.x = target.x;
-        target_pose.position.y = target.y;
-        target_pose.position.z = target.z;
+        target_pose.position.x = targets[i].x;
+        target_pose.position.y = targets[i].y;
+        target_pose.position.z = targets[i].z;
+        target_pose.orientation.w = 1.0; // You might need to set orientation properly
 
-        move_group.setPoseTarget(target_pose);
+        // Move to target
+        arm_motion.moveToTarget(target_pose);
+        ROS_INFO("Move completed to point 1");
+        // if (!arm_motion.moveToTarget(target_pose)) {
+        //     ROS_ERROR("Failed to move to target");
+        //     continue;
+        // }
 
-        // Plan motion to goal
-        moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-        bool success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-        ROS_INFO_NAMED("tutorial", "Visualizing plan (pose goal) %s", success ? "" : "FAILED");
+        // Close gripper
+        arm_motion.controlGripper("close");
+        ROS_INFO("Gripper Closed");
 
-        // If planning is successful, execute
-        if (success)
-        {
-            move_group.execute(my_plan);
-        }
+        // if (!arm_motion.controlGripper("close")) {
+        //     ROS_ERROR("Failed to close gripper");
+        //     continue;
+        // }
 
-        // Operate the gripper based on the target location
-        if (i == 0)  // If it's the first location, close the gripper
-        {
-            gripper_group.setJointValueTarget("gripper", 0);  // Replace /*closed_value*/ with the actual joint value representing closed gripper
-            gripper_group.move();
-        }
-        else if (i == 1)  // If it's the second location, open the gripper
-        {
-            gripper_group.setJointValueTarget("gripper", 0.5);  // Replace /*open_value*/ with the actual joint value representing open gripper
-            gripper_group.move();
-        }
+        // Convert drop-off point to geometry_msgs::Pose
+        geometry_msgs::Pose dropoff_pose;
+        dropoff_pose.position.x = dropOffPoints[i].x;
+        dropoff_pose.position.y = dropOffPoints[i].y;
+        dropoff_pose.position.z = dropOffPoints[i].z;
+        dropoff_pose.orientation.w = 1.0; // Set orientation as needed
 
-        // Optionally, add a delay between moves
-        ros::Duration(1.0).sleep(); 
+        arm_motion.moveToTarget(dropoff_pose);
+        ROS_INFO("Move completed to point 2");
+
+        arm_motion.controlGripper("open");
+        ROS_INFO("Gripper Open");
+
+        // Move to drop-off point
+        // if (!arm_motion.moveToTarget(dropoff_pose)) {
+        //     ROS_ERROR("Failed to move to drop-off point");
+        //     continue;
+        // }
+
+        // Open gripper
+        // if (!arm_motion.controlGripper("open")) {
+        //     ROS_ERROR("Failed to open gripper");
+        //     continue;
+        // }
     }
 
     // Shutdown ROS
     ros::shutdown();
     return 0;}
+    

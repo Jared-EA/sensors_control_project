@@ -1,0 +1,2 @@
+bool goal_reached
+

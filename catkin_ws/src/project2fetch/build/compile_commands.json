@@ -1,18 +1,18 @@
 [
 {
   "directory": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build",
-  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"project2fetch\\\" -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3  -g   -o CMakeFiles/move_robot.dir/src/move_arm_node.cpp.o -c /home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/move_arm_node.cpp",
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"project2fetch\\\" -I/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3  -g   -o CMakeFiles/move_robot.dir/src/move_arm_node.cpp.o -c /home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/move_arm_node.cpp",
   "file": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/move_arm_node.cpp"
 },
 {
   "directory": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build",
-  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"project2fetch\\\" -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3  -g   -o CMakeFiles/robot_main.dir/src/main.cpp.o -c /home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/main.cpp",
-  "file": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/main.cpp"
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"project2fetch\\\" -I/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3  -g   -o CMakeFiles/move_robot.dir/src/arm_motion.cpp.o -c /home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/arm_motion.cpp",
+  "file": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/arm_motion.cpp"
 },
 {
   "directory": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build",
-  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"project2fetch\\\" -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3  -g   -o CMakeFiles/robot_main.dir/src/fetchrobot.cpp.o -c /home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/fetchrobot.cpp",
-  "file": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/fetchrobot.cpp"
+  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"project2fetch\\\" -I/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/opt/ros/melodic/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3  -g   -o CMakeFiles/gripper_node.dir/src/gripper_node.cpp.o -c /home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/gripper_node.cpp",
+  "file": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/src/gripper_node.cpp"
 },
 {
   "directory": "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/gtest/googlemock",

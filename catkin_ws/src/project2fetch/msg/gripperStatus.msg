@@ -1,0 +1,2 @@
+bool gripper_closed
+

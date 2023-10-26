@@ -1,11 +1,11 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = ""
+messages_str = "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg;/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg"
 services_str = ""
 pkg_name = "project2fetch"
 dependencies_str = "sensor_msgs;std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"
-dep_include_paths_str = "sensor_msgs;/opt/ros/melodic/share/sensor_msgs/cmake/../msg;std_msgs;/opt/ros/melodic/share/std_msgs/cmake/../msg;geometry_msgs;/opt/ros/melodic/share/geometry_msgs/cmake/../msg"
+dep_include_paths_str = "project2fetch;/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg;sensor_msgs;/opt/ros/melodic/share/sensor_msgs/cmake/../msg;std_msgs;/opt/ros/melodic/share/std_msgs/cmake/../msg;geometry_msgs;/opt/ros/melodic/share/geometry_msgs/cmake/../msg"
 PYTHON_EXECUTABLE = "/usr/bin/python2"
 package_has_static_sources = '' == 'TRUE'
 genmsg_check_deps_script = "/opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

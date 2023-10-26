@@ -181,17 +181,82 @@ move_robot/fast:
 .PHONY : move_robot/fast
 
 #=============================================================================
-# Target rules for targets named robot_main
+# Target rules for targets named project2fetch_generate_messages_py
 
 # Build rule for target.
-robot_main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 robot_main
-.PHONY : robot_main
+project2fetch_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_generate_messages_py
+.PHONY : project2fetch_generate_messages_py
 
 # fast build rule for target.
-robot_main/fast:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/build
-.PHONY : robot_main/fast
+project2fetch_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_py.dir/build.make CMakeFiles/project2fetch_generate_messages_py.dir/build
+.PHONY : project2fetch_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named project2fetch_gennodejs
+
+# Build rule for target.
+project2fetch_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_gennodejs
+.PHONY : project2fetch_gennodejs
+
+# fast build rule for target.
+project2fetch_gennodejs/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_gennodejs.dir/build.make CMakeFiles/project2fetch_gennodejs.dir/build
+.PHONY : project2fetch_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named project2fetch_generate_messages_lisp
+
+# Build rule for target.
+project2fetch_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_generate_messages_lisp
+.PHONY : project2fetch_generate_messages_lisp
+
+# fast build rule for target.
+project2fetch_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_lisp.dir/build.make CMakeFiles/project2fetch_generate_messages_lisp.dir/build
+.PHONY : project2fetch_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named project2fetch_geneus
+
+# Build rule for target.
+project2fetch_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_geneus
+.PHONY : project2fetch_geneus
+
+# fast build rule for target.
+project2fetch_geneus/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_geneus.dir/build.make CMakeFiles/project2fetch_geneus.dir/build
+.PHONY : project2fetch_geneus/fast
+
+#=============================================================================
+# Target rules for targets named _project2fetch_generate_messages_check_deps_gripperStatus
+
+# Build rule for target.
+_project2fetch_generate_messages_check_deps_gripperStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _project2fetch_generate_messages_check_deps_gripperStatus
+.PHONY : _project2fetch_generate_messages_check_deps_gripperStatus
+
+# fast build rule for target.
+_project2fetch_generate_messages_check_deps_gripperStatus/fast:
+	$(MAKE) -f CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/build.make CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/build
+.PHONY : _project2fetch_generate_messages_check_deps_gripperStatus/fast
+
+#=============================================================================
+# Target rules for targets named project2fetch_generate_messages
+
+# Build rule for target.
+project2fetch_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_generate_messages
+.PHONY : project2fetch_generate_messages
+
+# fast build rule for target.
+project2fetch_generate_messages/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_generate_messages.dir/build.make CMakeFiles/project2fetch_generate_messages.dir/build
+.PHONY : project2fetch_generate_messages/fast
 
 #=============================================================================
 # Target rules for targets named std_srvs_generate_messages_py
@@ -311,6 +376,19 @@ shape_msgs_generate_messages_nodejs/fast:
 .PHONY : shape_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named project2fetch_generate_messages_cpp
+
+# Build rule for target.
+project2fetch_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_generate_messages_cpp
+.PHONY : project2fetch_generate_messages_cpp
+
+# fast build rule for target.
+project2fetch_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_cpp.dir/build.make CMakeFiles/project2fetch_generate_messages_cpp.dir/build
+.PHONY : project2fetch_generate_messages_cpp/fast
+
+#=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_eus
 
 # Build rule for target.
@@ -389,6 +467,19 @@ actionlib_generate_messages_nodejs/fast:
 .PHONY : actionlib_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named project2fetch_genlisp
+
+# Build rule for target.
+project2fetch_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_genlisp
+.PHONY : project2fetch_genlisp
+
+# fast build rule for target.
+project2fetch_genlisp/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_genlisp.dir/build.make CMakeFiles/project2fetch_genlisp.dir/build
+.PHONY : project2fetch_genlisp/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
 
 # Build rule for target.
@@ -426,6 +517,19 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 roscpp_generate_messages_cpp/fast:
 	$(MAKE) -f CMakeFiles/roscpp_generate_messages_cpp.dir/build.make CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named project2fetch_genpy
+
+# Build rule for target.
+project2fetch_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_genpy
+.PHONY : project2fetch_genpy
+
+# fast build rule for target.
+project2fetch_genpy/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_genpy.dir/build.make CMakeFiles/project2fetch_genpy.dir/build
+.PHONY : project2fetch_genpy/fast
 
 #=============================================================================
 # Target rules for targets named object_recognition_msgs_generate_messages_eus
@@ -480,6 +584,19 @@ sensor_msgs_generate_messages_lisp/fast:
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named project2fetch_generate_messages_eus
+
+# Build rule for target.
+project2fetch_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_generate_messages_eus
+.PHONY : project2fetch_generate_messages_eus
+
+# fast build rule for target.
+project2fetch_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_eus.dir/build.make CMakeFiles/project2fetch_generate_messages_eus.dir/build
+.PHONY : project2fetch_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named std_srvs_generate_messages_cpp
 
 # Build rule for target.
@@ -517,6 +634,19 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 sensor_msgs_generate_messages_eus/fast:
 	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _project2fetch_generate_messages_check_deps_goalStatus
+
+# Build rule for target.
+_project2fetch_generate_messages_check_deps_goalStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _project2fetch_generate_messages_check_deps_goalStatus
+.PHONY : _project2fetch_generate_messages_check_deps_goalStatus
+
+# fast build rule for target.
+_project2fetch_generate_messages_check_deps_goalStatus/fast:
+	$(MAKE) -f CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/build.make CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/build
+.PHONY : _project2fetch_generate_messages_check_deps_goalStatus/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_cpp
@@ -569,6 +699,19 @@ std_msgs_generate_messages_cpp: cmake_check_build_system
 std_msgs_generate_messages_cpp/fast:
 	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named project2fetch_generate_messages_nodejs
+
+# Build rule for target.
+project2fetch_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_generate_messages_nodejs
+.PHONY : project2fetch_generate_messages_nodejs
+
+# fast build rule for target.
+project2fetch_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_nodejs.dir/build.make CMakeFiles/project2fetch_generate_messages_nodejs.dir/build
+.PHONY : project2fetch_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named visualization_msgs_generate_messages_nodejs
@@ -1273,6 +1416,19 @@ tf2_msgs_generate_messages_lisp/fast:
 .PHONY : tf2_msgs_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named project2fetch_gencpp
+
+# Build rule for target.
+project2fetch_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project2fetch_gencpp
+.PHONY : project2fetch_gencpp
+
+# fast build rule for target.
+project2fetch_gencpp/fast:
+	$(MAKE) -f CMakeFiles/project2fetch_gencpp.dir/build.make CMakeFiles/project2fetch_gencpp.dir/build
+.PHONY : project2fetch_gencpp/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_generate_messages_py
 
 # Build rule for target.
@@ -1297,6 +1453,19 @@ tf2_msgs_generate_messages_py: cmake_check_build_system
 tf2_msgs_generate_messages_py/fast:
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make CMakeFiles/tf2_msgs_generate_messages_py.dir/build
 .PHONY : tf2_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named gripper_node
+
+# Build rule for target.
+gripper_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gripper_node
+.PHONY : gripper_node
+
+# fast build rule for target.
+gripper_node/fast:
+	$(MAKE) -f CMakeFiles/gripper_node.dir/build.make CMakeFiles/gripper_node.dir/build
+.PHONY : gripper_node/fast
 
 #=============================================================================
 # Target rules for targets named tf_generate_messages_nodejs
@@ -1454,59 +1623,59 @@ gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-src/fetchrobot.o: src/fetchrobot.cpp.o
+src/arm_motion.o: src/arm_motion.cpp.o
 
-.PHONY : src/fetchrobot.o
-
-# target to build an object file
-src/fetchrobot.cpp.o:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/src/fetchrobot.cpp.o
-.PHONY : src/fetchrobot.cpp.o
-
-src/fetchrobot.i: src/fetchrobot.cpp.i
-
-.PHONY : src/fetchrobot.i
-
-# target to preprocess a source file
-src/fetchrobot.cpp.i:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/src/fetchrobot.cpp.i
-.PHONY : src/fetchrobot.cpp.i
-
-src/fetchrobot.s: src/fetchrobot.cpp.s
-
-.PHONY : src/fetchrobot.s
-
-# target to generate assembly for a file
-src/fetchrobot.cpp.s:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/src/fetchrobot.cpp.s
-.PHONY : src/fetchrobot.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
+.PHONY : src/arm_motion.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/arm_motion.cpp.o:
+	$(MAKE) -f CMakeFiles/move_robot.dir/build.make CMakeFiles/move_robot.dir/src/arm_motion.cpp.o
+.PHONY : src/arm_motion.cpp.o
 
-src/main.i: src/main.cpp.i
+src/arm_motion.i: src/arm_motion.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/arm_motion.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/arm_motion.cpp.i:
+	$(MAKE) -f CMakeFiles/move_robot.dir/build.make CMakeFiles/move_robot.dir/src/arm_motion.cpp.i
+.PHONY : src/arm_motion.cpp.i
 
-src/main.s: src/main.cpp.s
+src/arm_motion.s: src/arm_motion.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/arm_motion.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/robot_main.dir/build.make CMakeFiles/robot_main.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/arm_motion.cpp.s:
+	$(MAKE) -f CMakeFiles/move_robot.dir/build.make CMakeFiles/move_robot.dir/src/arm_motion.cpp.s
+.PHONY : src/arm_motion.cpp.s
+
+src/gripper_node.o: src/gripper_node.cpp.o
+
+.PHONY : src/gripper_node.o
+
+# target to build an object file
+src/gripper_node.cpp.o:
+	$(MAKE) -f CMakeFiles/gripper_node.dir/build.make CMakeFiles/gripper_node.dir/src/gripper_node.cpp.o
+.PHONY : src/gripper_node.cpp.o
+
+src/gripper_node.i: src/gripper_node.cpp.i
+
+.PHONY : src/gripper_node.i
+
+# target to preprocess a source file
+src/gripper_node.cpp.i:
+	$(MAKE) -f CMakeFiles/gripper_node.dir/build.make CMakeFiles/gripper_node.dir/src/gripper_node.cpp.i
+.PHONY : src/gripper_node.cpp.i
+
+src/gripper_node.s: src/gripper_node.cpp.s
+
+.PHONY : src/gripper_node.s
+
+# target to generate assembly for a file
+src/gripper_node.cpp.s:
+	$(MAKE) -f CMakeFiles/gripper_node.dir/build.make CMakeFiles/gripper_node.dir/src/gripper_node.cpp.s
+.PHONY : src/gripper_node.cpp.s
 
 src/move_arm_node.o: src/move_arm_node.cpp.o
 
@@ -1547,7 +1716,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... move_robot"
-	@echo "... robot_main"
+	@echo "... project2fetch_generate_messages_py"
+	@echo "... project2fetch_gennodejs"
+	@echo "... project2fetch_generate_messages_lisp"
+	@echo "... project2fetch_geneus"
+	@echo "... _project2fetch_generate_messages_check_deps_gripperStatus"
+	@echo "... project2fetch_generate_messages"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... moveit_ros_manipulation_gencfg"
@@ -1557,27 +1731,33 @@ help:
 	@echo "... object_recognition_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... shape_msgs_generate_messages_nodejs"
+	@echo "... project2fetch_generate_messages_cpp"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
 	@echo "... dynamic_reconfigure_generate_messages_py"
 	@echo "... shape_msgs_generate_messages_lisp"
 	@echo "... shape_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... project2fetch_genlisp"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_cpp"
+	@echo "... project2fetch_genpy"
 	@echo "... object_recognition_msgs_generate_messages_eus"
 	@echo "... octomap_msgs_generate_messages_eus"
 	@echo "... rebuild_cache"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... project2fetch_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... doxygen"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... _project2fetch_generate_messages_check_deps_goalStatus"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... clean_test_results"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... project2fetch_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... moveit_msgs_generate_messages_nodejs"
@@ -1633,8 +1813,10 @@ help:
 	@echo "... octomap_msgs_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_gencfg"
 	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... project2fetch_gencpp"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... gripper_node"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... octomap_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -1647,12 +1829,12 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... src/fetchrobot.o"
-	@echo "... src/fetchrobot.i"
-	@echo "... src/fetchrobot.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/arm_motion.o"
+	@echo "... src/arm_motion.i"
+	@echo "... src/arm_motion.s"
+	@echo "... src/gripper_node.o"
+	@echo "... src/gripper_node.i"
+	@echo "... src/gripper_node.s"
 	@echo "... src/move_arm_node.o"
 	@echo "... src/move_arm_node.i"
 	@echo "... src/move_arm_node.s"

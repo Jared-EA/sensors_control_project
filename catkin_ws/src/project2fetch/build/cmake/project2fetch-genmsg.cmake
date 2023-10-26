@@ -1,10 +1,8 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(WARNING "Invoking generate_messages() without having added any message or service file before.
-You should either add add_message_files() and/or add_service_files() calls or remove the invocation of generate_messages().")
-message(STATUS "project2fetch: 0 messages, 0 services")
+message(STATUS "project2fetch: 2 messages, 0 services")
 
-set(MSG_I_FLAGS "-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg")
+set(MSG_I_FLAGS "-Iproject2fetch:/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -19,12 +17,34 @@ add_custom_target(project2fetch_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" NAME_WE)
+add_custom_target(_project2fetch_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "project2fetch" "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" ""
+)
+
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" NAME_WE)
+add_custom_target(_project2fetch_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "project2fetch" "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/project2fetch
+)
+_generate_msg_cpp(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/project2fetch
+)
 
 ### Generating Services
 
@@ -40,6 +60,10 @@ add_custom_target(project2fetch_generate_messages_cpp
 add_dependencies(project2fetch_generate_messages project2fetch_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_cpp _project2fetch_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_cpp _project2fetch_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(project2fetch_gencpp)
@@ -50,6 +74,18 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS project2fetch_generate_messages_cpp
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/project2fetch
+)
+_generate_msg_eus(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/project2fetch
+)
 
 ### Generating Services
 
@@ -65,6 +101,10 @@ add_custom_target(project2fetch_generate_messages_eus
 add_dependencies(project2fetch_generate_messages project2fetch_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_eus _project2fetch_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_eus _project2fetch_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(project2fetch_geneus)
@@ -75,6 +115,18 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS project2fetch_generate_messages_eus
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/project2fetch
+)
+_generate_msg_lisp(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/project2fetch
+)
 
 ### Generating Services
 
@@ -90,6 +142,10 @@ add_custom_target(project2fetch_generate_messages_lisp
 add_dependencies(project2fetch_generate_messages project2fetch_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_lisp _project2fetch_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_lisp _project2fetch_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(project2fetch_genlisp)
@@ -100,6 +156,18 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS project2fetch_generate_messages_lis
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/project2fetch
+)
+_generate_msg_nodejs(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/project2fetch
+)
 
 ### Generating Services
 
@@ -115,6 +183,10 @@ add_custom_target(project2fetch_generate_messages_nodejs
 add_dependencies(project2fetch_generate_messages project2fetch_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_nodejs _project2fetch_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_nodejs _project2fetch_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(project2fetch_gennodejs)
@@ -125,6 +197,18 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS project2fetch_generate_messages_nod
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/project2fetch
+)
+_generate_msg_py(project2fetch
+  "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/project2fetch
+)
 
 ### Generating Services
 
@@ -140,6 +224,10 @@ add_custom_target(project2fetch_generate_messages_py
 add_dependencies(project2fetch_generate_messages project2fetch_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/gripperStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_py _project2fetch_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/msg/goalStatus.msg" NAME_WE)
+add_dependencies(project2fetch_generate_messages_py _project2fetch_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(project2fetch_genpy)

@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_core
   moveit_ros_planning
   moveit_ros_planning_interface
+  message_generation
 )
 find_package(Eigen3 REQUIRED)
 
@@ -52,12 +53,12 @@ find_package(Eigen3 REQUIRED)
 ##   * uncomment the generate_messages entry below
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+# Generate messages in the 'msg' folder
+add_message_files(
+  FILES
+  goalStatus.msg
+  gripperStatus.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -74,10 +75,11 @@ find_package(Eigen3 REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   sensor_msgs#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  sensor_msgs
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -113,6 +115,7 @@ catkin_package(
 #  LIBRARIES project2fetch
 #  CATKIN_DEPENDS roscpp sensor_msgs std_msgs
 #  DEPENDS system_lib
+  CATKIN_DEPENDS message_runtime
 )
 
 ###########
@@ -140,8 +143,9 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 
-add_executable(robot_main src/main.cpp src/fetchrobot.cpp)
-add_executable(move_robot src/move_arm_node.cpp)
+# add_executable(robot_main src/main.cpp src/fetchrobot.cpp)
+add_executable(move_robot src/move_arm_node.cpp src/arm_motion.cpp)
+add_executable(gripper_node src/gripper_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -151,15 +155,20 @@ add_executable(move_robot src/move_arm_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(move_robot ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(gripper_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 
-target_link_libraries(robot_main
+# target_link_libraries(robot_main
+#   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
+# )
+
+target_link_libraries(move_robot
   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 )
 
-target_link_libraries(move_robot
+target_link_libraries(gripper_node
   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 )
 #############

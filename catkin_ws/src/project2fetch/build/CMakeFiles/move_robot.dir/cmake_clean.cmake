@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/move_robot.dir/src/move_arm_node.cpp.o"
+  "CMakeFiles/move_robot.dir/src/arm_motion.cpp.o"
   "devel/lib/project2fetch/move_robot.pdb"
   "devel/lib/project2fetch/move_robot"
 )
