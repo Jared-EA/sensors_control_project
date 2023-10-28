@@ -89,7 +89,7 @@
       <static>1</static>
       <link name='link'>
         <collision name='surface'>
-          <pose frame=''>0 0 0.755 0 -0 0</pose>
+          <pose frame=''>0 0 0.66 0 -0 0</pose>
           <geometry>
             <box>
               <size>0.913 0.913 0.04</size>
@@ -113,7 +113,7 @@
           <pose frame=''>0 0 0.37 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.042 0.042 0.74</size>
+              <size>0.042 0.042 0.70</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -162,13 +162,13 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>1.25324 -0.00897 0 0 -0 0</pose>
+      <pose frame=''>1.0 0.0 0 0 -0 0</pose>
     </model>
     <model name='cafe_table_0'>
       <static>1</static>
       <link name='link'>
         <collision name='surface'>
-          <pose frame=''>0 0 0.755 0 -0 0</pose>
+          <pose frame=''>0 0 0.66 0 -0 0</pose>
           <geometry>
             <box>
               <size>0.913 0.913 0.04</size>
@@ -192,7 +192,7 @@
           <pose frame=''>0 0 0.37 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.042 0.042 0.74</size>
+              <size>0.042 0.042 0.70</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -241,71 +241,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>1.24538 0.970481 0 0 -0 0</pose>
-    </model>
-    <model name='dropoff_box'>
-      <static>1</static>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.0755262</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.0441608</iyy>
-            <iyz>0</iyz>
-            <izz>0.103304</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://dropoff_box/meshes/box_v1.stl</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>30</mu>
-                <mu2>30</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode>
-                <soft_cfm>0</soft_cfm>
-                <soft_erp>0.2</soft_erp>
-                <kp>1e+13</kp>
-                <kd>1</kd>
-                <max_vel>0.01</max_vel>
-                <min_depth>0</min_depth>
-              </ode>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://dropoff_box/meshes/box_v1.dae</uri>
-              <scale>1 1 1</scale>
-            </mesh>
-          </geometry>
-        </visual>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0</angular>
-        </velocity_decay>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <enable_wind>0</enable_wind>
-      </link>
-      <pose frame=''>0.604696 1.14789 0 0 -0 0</pose>
+      <pose frame=''>0.0 -1.0 0 0 -0 0</pose>
     </model>
     <model name='Coke'>
       <static>1</static>
@@ -353,7 +289,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>0.903656 -0.069344 0 0 -0 0</pose>
+      <pose frame=''>0.8 -0.25 0.70 0 -0 0</pose>
     </model>
     <state world_name='default'>
       <sim_time>298 529000000</sim_time>
@@ -361,44 +297,35 @@
       <wall_time>1697351099 70000222</wall_time>
       <iterations>298529</iterations>
       <model name='Coke'>
-        <pose frame=''>0.900994 -0.071707 0.786874 0 -0 0</pose>
+        <pose frame=''>0.8 -0.25 0.70 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='body'>
-          <pose frame=''>0.900994 -0.071707 0.786874 0 -0 0</pose>
+          <pose frame=''>0.8 -0.25 0.70 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='cafe_table'>
-        <pose frame=''>1.25324 -0.00897 0 0 -0 0</pose>
+        <pose frame=''>1.0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>1.25324 -0.00897 0 0 -0 0</pose>
+          <pose frame=''>1.0 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='cafe_table_0'>
-        <pose frame=''>1.24538 0.970481 0 0 -0 0</pose>
+        <pose frame=''>0.0 -1.0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>1.24538 0.970481 0 0 -0 0</pose>
+          <pose frame=''>0.0 -1.0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
-      </model>
-      <model name='dropoff_box'>
-        <pose frame=''>0.604696 1.14789 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0.604696 1.14789 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
+
       </model>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
