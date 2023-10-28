@@ -26,6 +26,8 @@
 
 // #include "gripper.cpp"
 
+double endEffLength = 0.15;
+
 
 // Create a structure for the target points
 struct TargetPoint {
@@ -48,14 +50,14 @@ int main(int argc, char **argv)
 
     // List of target points
     std::vector<TargetPoint> targets = {
-        {0.5, 0.25, 0.5},
-        {0.6, 0.0,  0.4},
+        {0.7, -0.25, 0.95},
+        {0.6, 0.0,  0.95},
         // Add more points as needed
     };
     // Make sure there is a drop-off point for each target point
     std::vector<TargetPoint> dropOffPoints = {
-        {1.0, 0.0, 0.5},
-        {1.1, 0.1, 0.4}
+        {0.1, -0.7, 0.95},
+        {0.0, -0.7, 0.95}
         
     };
 
@@ -84,39 +86,62 @@ int main(int argc, char **argv)
     ros::AsyncSpinner spinner(1);
     spinner.start();
 
+    arm_motion.moveOrientationPose();
+
     for (size_t i = 0; i < targets.size(); i++) {
-        // Convert TargetPoint to geometry_msgs::Pose
+        // Convert Points to geometry_msgs::Pose
+        geometry_msgs::Pose initial_pose;
         geometry_msgs::Pose target_pose;
+        geometry_msgs::Pose initial_dropoff_pose;
+        geometry_msgs::Pose dropoff_pose;
+
+        initial_pose.position.x = targets[i].x;
+        initial_pose.position.y = targets[i].y;
+        initial_pose.position.z = targets[i].z + 0.15+endEffLength;
+
         target_pose.position.x = targets[i].x;
         target_pose.position.y = targets[i].y;
-        target_pose.position.z = targets[i].z;
-        target_pose.orientation.w = 1.0; // You might need to set orientation properly
+        target_pose.position.z = targets[i].z+endEffLength;
 
-        // Move to target
-        arm_motion.moveToTarget(target_pose);
-        ROS_INFO("Move completed to point 1");
-        // if (!arm_motion.moveToTarget(target_pose)) {
-        //     ROS_ERROR("Failed to move to target");
-        //     continue;
-        // }
-
-        // Close gripper
-        arm_motion.controlGripper("close");
-        ROS_INFO("Gripper Closed");
-
-        // if (!arm_motion.controlGripper("close")) {
-        //     ROS_ERROR("Failed to close gripper");
-        //     continue;
-        // }
-
-        // Convert drop-off point to geometry_msgs::Pose
-        geometry_msgs::Pose dropoff_pose;
         dropoff_pose.position.x = dropOffPoints[i].x;
         dropoff_pose.position.y = dropOffPoints[i].y;
-        dropoff_pose.position.z = dropOffPoints[i].z;
-        dropoff_pose.orientation.w = 1.0; // Set orientation as needed
+        dropoff_pose.position.z = dropOffPoints[i].z + endEffLength;
 
-        arm_motion.moveToTarget(dropoff_pose);
+        initial_dropoff_pose.position.x = dropOffPoints[i].x;
+        initial_dropoff_pose.position.y = dropOffPoints[i].y;
+        initial_dropoff_pose.position.z = dropOffPoints[i].z + 0.15 + endEffLength;
+        
+
+        // Move to target
+
+        if (!arm_motion.moveToTarget(initial_pose)) {
+            ROS_ERROR("Failed to move to target");
+            continue;
+        }
+        
+        if (!arm_motion.moveToTarget(target_pose)) {
+            ROS_ERROR("Failed to move to target");
+            continue;
+        }
+        ROS_INFO("Move completed to point 1");
+
+        // Close gripper
+        if (!arm_motion.controlGripper("closed")) {
+            ROS_ERROR("Failed to move to target");
+            continue;
+        }
+
+        ROS_INFO("Gripper Closed");
+
+        if (!arm_motion.moveToTarget(initial_dropoff_pose)) {
+            ROS_ERROR("Failed to move to target");
+            continue;
+        }
+
+        if (!arm_motion.moveToTarget(dropoff_pose)) {
+            ROS_ERROR("Failed to move to target");
+            continue;
+        }
         ROS_INFO("Move completed to point 2");
 
         arm_motion.controlGripper("open");

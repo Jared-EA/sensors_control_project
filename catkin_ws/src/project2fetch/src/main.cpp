@@ -16,47 +16,35 @@
 #include <moveit_msgs/CollisionObject.h>
 #include <moveit_visual_tools/moveit_visual_tools.h>
 
-ros::Publisher image_pub;
+// ros::Publisher image_pub;
 
-void callback_image(const sensor_msgs::Image::ConstPtr& msg){
-    ROS_INFO("here we are!!!");
+// void callback_image(const sensor_msgs::Image::ConstPtr& msg){
+//     ROS_INFO("here we are!!!");
 
-    // std_msgs::ColorRGBA
-}
+//     // std_msgs::ColorRGBA
+// }
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "project2fetch");
+    ros::init(argc, argv, "project2fetch_run");
     ros::NodeHandle nh;
 
-    ros::Subscriber  image_scan = nh.subscribe("/head_camera/rgb/image_raw", 1, callback_image);
+    // ROS spinning must be running for the MoveGroupInterface to get information
+    // about the robot's state. One way to do this is to start an AsyncSpinner
+    // beforehand.
+    ros::AsyncSpinner spinner(1);
+    spinner.start();
 
-    image_pub = nh.advertise<std_msgs::ColorRGBA>("image_topic", 1);
+    // MoveIt operates on sets of joints called "planning groups" and stores them in an object called
+    // the `JointModelGroup`. Throughout MoveIt the terms "planning group" and "joint model group"
+    // are used interchangably.
+    static const std::string PLANNING_GROUP_ARM = "robot_arm";
+    static const std::string PLANNING_GROUP_GRIPPER = "gripper";
 
-    FetchRobotController controller(nh);
+    // The :planning_interface:`MoveGroupInterface` class can be easily
+    // setup using just the name of the planning group you would like to control and plan for.
+    moveit::planning_interface::MoveGroupInterface move_group_interface_arm(PLANNING_GROUP_ARM);
+    moveit::planning_interface::MoveGroupInterface move_group_interface_gripper(PLANNING_GROUP_GRIPPER);
 
-    // // Name of the move group (should be defined in your SRDF)
-    // moveit::planning_interface::MoveGroupInterface group("arm_with_torso"); 
-    // // Set a target pose for the Fetch robot's arm
-    // geometry_msgs::Pose target_pose;
-    // target_pose.orientation.w = 1.0;
-    // target_pose.position.x = 0.4;
-    // target_pose.position.y = -0.2;
-    // target_pose.position.z = 0.8;
-    // group.setPoseTarget(target_pose);
-
-    // // Plan the motion and execute it
-    // moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-    // bool success = (group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    // if (success) {
-    //     ROS_INFO("Plan found. Executing...");
-    //     group.execute(my_plan);
-    // } else {
-    //     ROS_WARN("No plan found. Ensure that the target pose is reachable and not in collision.");
-    // }
-
-    std::thread t(&FetchRobotController::seperateThread, &controller);
-
-    ros::Rate loop_rate(20);
 
     while (ros::ok()){
         loop_rate.sleep();

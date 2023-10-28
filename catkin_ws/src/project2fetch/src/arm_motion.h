@@ -15,11 +15,13 @@ public:
     ArmMotion();
     bool moveToTarget(const geometry_msgs::Pose& target_pose);
     bool controlGripper(const std::string& position);
+    bool moveOrientationPose();
     // Add other arm-related methods and members as needed
 
     private:
         moveit::planning_interface::MoveGroupInterface move_group;
         moveit::planning_interface::MoveGroupInterface gripper_group;
+        moveit::planning_interface::MoveGroupInterface torso_move_group;
         // actionlib::SimpleActionClient<control_msgs::GripperCommandAction> gripper_group;
         ros::Publisher goal_status_pub;
         ros::Publisher gripper_publisher;
