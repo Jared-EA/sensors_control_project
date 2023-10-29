@@ -1,16 +1,23 @@
 % load using gazebo
 close all
 
-setenv('ROS_IP','172.25.128.1'); %Christians IP, also set correct IP on WSL through 
+rosshutdown;
+
+% Initialise the ROS node
+rosinit('NodeName', 'ObjectDetection_node')
+
+setenv('ROS_IP','192.168.0.227'); % Jared's IP, also set correct IP on WSL through 
 % '$ ifconfig', then set '$ export ROS_IP=xxxx.xxx.xxx.xxx' in WSL window
 
 OBJECT_TO_FIND = 2; % 1 = coke 
                     % 2 = cube
 
 %% Depth Cloud
+fprintf("\nLoading rostopics... \n");
 depthpoints = rossubscriber('/head_camera/depth_registered/points','DataFormat','struct');
-points = receive(depthpoints,5);
+points = receive(depthpoints,1);
 
+fprintf("Extracting point cloud... \n");
 % rosPlot(depth_ros) %makes a pointcloud
 cart = rosReadXYZ(points);
 cartValid = cart(~isnan(cart(:,1)),:);
@@ -20,13 +27,20 @@ holder = cartValid(:,2);
 cartValid(:,2) = cartValid(:,3); %swap x and y
 cartValid(:,3) = holder*-1 + 1.0597; %min value (floor) to set correct origin
 
+%% Camera Tilt Compensation
+fprintf("Compensating for camera tilt... \n");
+tilt_angle = -0.35; % Negative if the camera is tilted down
+Rx = [1 0 0; 0 cos(tilt_angle) -sin(tilt_angle); 0 sin(tilt_angle) cos(tilt_angle)]; % Rotation matrix about x-axis
+cartValid = (Rx * cartValid')'; % Apply rotation
+
+
 % removing unwanted points
 counter = 0;
 cartObject = sortrows(cartValid,3,"ascend"); %sort coloumns by z value
 
 % find values below the table
 for i = 1:numel(cartObject(:,3))
-    if cartObject(i,3) < 0.775 
+    if cartObject(i,3) < 0.70 
         counter = counter + 1; 
     end
 end
@@ -38,6 +52,7 @@ cartObject(1:counter,:) = [];
 Objects = pointCloud(cartObject);
 
 %% POINT CLOUD OBJECT DETECTION 
+fprintf("Segmenting point cloud... \n");
 % segments point cloud clusters
 [labels, numClusters] = pcsegdist(Objects,0.05);
 
@@ -65,6 +80,13 @@ for i = 1:numClusters
     item{i} = pointCloud(item{i});
 end
 
+switch OBJECT_TO_FIND
+    case 1
+        fprintf("Searching for COKE CAN... \n\n");
+    case 2
+        fprintf("Searching for CUBE... \n\n");
+end
+
 % load in objects to compare to for detection
 switch OBJECT_TO_FIND
     case 1
@@ -83,7 +105,8 @@ features{2} = extractFPFHFeatures(item{2});
 [matchpairs1,scores1] = pcmatchfeatures(objfeatures,features{1},obj,item{1});
 [matchpairs2,scores2] = pcmatchfeatures(objfeatures,features{2},obj,item{2});
 
-%                         something wrong here
+
+%                         SOMETHING FUNKY HAPPENS HERE
 
 if length(matchpairs1) > length(matchpairs2)
     detectedObj = item{1};
@@ -91,30 +114,10 @@ else
     if length(matchpairs1) < length(matchpairs2)
         detectedObj = item{2};
     else
-        fprintf('There has been an error in object detection');
+        fprintf("!! There has been an error during object detection !! \n");
         return
     end
 end
-
-% switch OBJECT_TO_FIND
-%     case 1
-%         fprintf('doing case 1 \n')
-%         if mean(scores1) < mean(scores2)
-%             detectedObj = item{2};
-%         else
-%             fprintf('There has been an error in object detection');
-%             return
-%         end
-%     case 2 
-%         fprintf('doing case 2 \n')
-%         if mean(scores2) < mean(scores1)
-%             detectedObj = item{1};
-% 
-%         else
-%             fprintf('There has been an error in object detection');
-%             return
-%         end
-% end
 
 %% Grasping Position
 xmin = min(detectedObj.Location(:,1));
@@ -125,14 +128,16 @@ zmin = min(detectedObj.Location(:,3));
 zmax = max(detectedObj.Location(:,3));
 xmid = (xmax-xmin)/2;
 ymid = (ymax-ymin)/2;
-zmid = (zmax-zmin)/2;
 
-GraspingPos = [(xmin+xmid),(ymin+ymid),(zmin+zmid)]
 
+GraspingPos = [(xmin+xmid),(ymin+ymid),(zmax)];
+message = "The Grasping Position is: ";
+disp(message)
+disp(GraspingPos)
 %% Figures
-% figure;
-% pc2 = pointCloud(cartValid); % view entire scene
-% pcshow(pc2)
+figure;
+pc2 = pointCloud(cartValid); % view entire scene
+pcshow(pc2)
 figure;
 pcshow(Objects) % view all objects
 figure;
