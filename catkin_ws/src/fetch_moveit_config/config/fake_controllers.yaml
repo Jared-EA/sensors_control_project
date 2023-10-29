@@ -28,3 +28,5 @@ controller_list:
 initial:  # Define initial robot poses.
   - group: robot_arm
     pose: home
+  - group: arm_w/torso
+    pose: Orientation Set Down

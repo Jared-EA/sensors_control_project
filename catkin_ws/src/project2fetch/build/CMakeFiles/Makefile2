@@ -87,36 +87,6 @@ CMakeFiles/move_robot.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/octomap_msgs_generate_messages_eus.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/project2fetch_generate_messages_eus.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/project2fetch_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/shape_msgs_generate_messages_eus.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/moveit_ros_planning_gencfg.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_py.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/moveit_msgs_generate_messages_cpp.dir/all
@@ -156,6 +126,36 @@ CMakeFiles/move_robot.dir/all: CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 CMakeFiles/move_robot.dir/all: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/project2fetch_generate_messages_eus.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/project2fetch_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/shape_msgs_generate_messages_eus.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/moveit_ros_planning_gencfg.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/move_robot.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f CMakeFiles/move_robot.dir/build.make CMakeFiles/move_robot.dir/depend
 	$(MAKE) -f CMakeFiles/move_robot.dir/build.make CMakeFiles/move_robot.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/CMakeFiles --progress-num=14,15,16 "Built target move_robot"
@@ -1494,9 +1494,9 @@ clean: CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 # All Build rule for target.
 CMakeFiles/project2fetch_generate_messages_nodejs.dir/all: CMakeFiles/_project2fetch_generate_messages_check_deps_gripperStatus.dir/all
+CMakeFiles/project2fetch_generate_messages_nodejs.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/project2fetch_generate_messages_nodejs.dir/all: CMakeFiles/_project2fetch_generate_messages_check_deps_goalStatus.dir/all
 CMakeFiles/project2fetch_generate_messages_nodejs.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/project2fetch_generate_messages_nodejs.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_nodejs.dir/build.make CMakeFiles/project2fetch_generate_messages_nodejs.dir/depend
 	$(MAKE) -f CMakeFiles/project2fetch_generate_messages_nodejs.dir/build.make CMakeFiles/project2fetch_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/CMakeFiles --progress-num=24,25 "Built target project2fetch_generate_messages_nodejs"
@@ -3376,36 +3376,6 @@ CMakeFiles/gripper_node.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/octomap_msgs_generate_messages_eus.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/project2fetch_generate_messages_eus.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/project2fetch_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/shape_msgs_generate_messages_eus.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/moveit_ros_planning_gencfg.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_py.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/moveit_msgs_generate_messages_cpp.dir/all
@@ -3445,6 +3415,36 @@ CMakeFiles/gripper_node.dir/all: CMakeFiles/tf2_msgs_generate_messages_cpp.dir/a
 CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 CMakeFiles/gripper_node.dir/all: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/project2fetch_generate_messages_eus.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/project2fetch_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/moveit_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/shape_msgs_generate_messages_eus.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/moveit_ros_planning_gencfg.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/gripper_node.dir/all: CMakeFiles/visualization_msgs_generate_messages_eus.dir/all
 	$(MAKE) -f CMakeFiles/gripper_node.dir/build.make CMakeFiles/gripper_node.dir/depend
 	$(MAKE) -f CMakeFiles/gripper_node.dir/build.make CMakeFiles/gripper_node.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jared/sensors_control_project/catkin_ws/src/project2fetch/build/CMakeFiles --progress-num=8,9 "Built target gripper_node"

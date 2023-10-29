@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/jared/catkin_ws/devel/include/**",
+        "/home/jared/sensors_control_project/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/jared/sensors_control_project/catkin_ws/src/fetch_gazebo/include/**",
+        "/home/jared/sensors_control_project/catkin_ws/src/project2fetch/include/**",
+        "/home/jared/catkin_ws/src/usb_cam/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

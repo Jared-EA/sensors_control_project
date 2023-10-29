@@ -9,7 +9,7 @@ rosinit('NodeName', 'ObjectDetection_node')
 setenv('ROS_IP','192.168.0.227'); % Jared's IP, also set correct IP on WSL through 
 % '$ ifconfig', then set '$ export ROS_IP=xxxx.xxx.xxx.xxx' in WSL window
 
-OBJECT_TO_FIND = 2; % 1 = coke 
+OBJECT_TO_FIND = 1; % 1 = coke 
                     % 2 = cube
 
 %% Depth Cloud
@@ -40,7 +40,7 @@ cartObject = sortrows(cartValid,3,"ascend"); %sort coloumns by z value
 
 % find values below the table
 for i = 1:numel(cartObject(:,3))
-    if cartObject(i,3) < 0.70 
+    if cartObject(i,3) < 0.66
         counter = counter + 1; 
     end
 end
@@ -107,46 +107,64 @@ features{2} = extractFPFHFeatures(item{2});
 
 
 %                         SOMETHING FUNKY HAPPENS HERE
-
 if length(matchpairs1) > length(matchpairs2)
     detectedObj = item{1};
+    GraspingPos = GetGraspPos(item{1});
+    % publishing
+    [pub,msg] = rospublisher('position','geometry_msgs/Point');
+    msg.X = GraspingPos(1,1);
+    msg.Y = GraspingPos(1,2);
+    msg.Z = GraspingPos(1,3);
+    send(pub,msg);
+    pause(0.1);
+
+    GraspingPos = GetGraspPos(item{2});
+    % publishing
+    [pub,msg] = rospublisher('position','geometry_msgs/Point');
+    msg.X = GraspingPos(1,1);
+    msg.Y = GraspingPos(1,2);
+    msg.Z = GraspingPos(1,3);
+    send(pub,msg);
+    
 else 
     if length(matchpairs1) < length(matchpairs2)
         detectedObj = item{2};
+        GraspingPos = GetGraspPos(item{2});
+        % publishing
+        [pub,msg] = rospublisher('position','geometry_msgs/Point');
+        msg.X = GraspingPos(1,1);
+        msg.Y = GraspingPos(1,2);
+        msg.Z = GraspingPos(1,3);
+        send(pub,msg);
+        
+        pause(1.0);
+
+        GraspingPos = GetGraspPos(item{1});
+        % publishing
+        [pub,msg] = rospublisher('position','geometry_msgs/Point');
+        msg.X = GraspingPos(1,1);
+        msg.Y = GraspingPos(1,2);
+        msg.Z = GraspingPos(1,3);
+        send(pub,msg);
     else
-        fprintf("!! There has been an error during object detection !! \n");
+        fprintf('There has been an error in object detection');
         return
     end
 end
 
-%% Grasping Position
-xmin = min(detectedObj.Location(:,1));
-xmax = max(detectedObj.Location(:,1));
-ymin = min(detectedObj.Location(:,2));
-ymax = max(detectedObj.Location(:,2));
-zmin = min(detectedObj.Location(:,3));
-zmax = max(detectedObj.Location(:,3));
-xmid = (xmax-xmin)/2;
-ymid = (ymax-ymin)/2;
-
-
-GraspingPos = [(xmin+xmid),(ymin+ymid),(zmax)];
-message = "The Grasping Position is: ";
-disp(message)
-disp(GraspingPos)
 %% Figures
-figure;
-pc2 = pointCloud(cartValid); % view entire scene
-pcshow(pc2)
-figure;
-pcshow(Objects) % view all objects
-figure;
-pcshow(detectedObj); % view detected object
+% figure;
+% pc2 = pointCloud(cartValid); % view entire scene
+% pcshow(pc2)
+% figure;
+% pcshow(Objects) % view all objects
+% figure;
+% pcshow(detectedObj); % view detected object
 
 %% Publishing
-[pub,msg] = rospublisher('position','geometry_msgs/Point');
-
-msg.X = GraspingPos(1,1);
-msg.Y = GraspingPos(1,2);
-msg.Z = GraspingPos(1,3);
-send(pub,msg);
+% [pub,msg] = rospublisher('position','geometry_msgs/Point');
+% 
+% msg.X = GraspingPos(1,1);
+% msg.Y = GraspingPos(1,2);
+% msg.Z = GraspingPos(1,3);
+% send(pub,msg);

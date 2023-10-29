@@ -12,10 +12,10 @@
 
 class ArmMotion {
 public:
-    ArmMotion();
+    ArmMotion(ros::NodeHandle& node_handle);
     bool moveToTarget(const geometry_msgs::Pose& target_pose);
     bool controlGripper(const std::string& position);
-    bool moveOrientationPose();
+    bool moveOrientationPose(const std::string& orientation);
     // Add other arm-related methods and members as needed
 
     private:
@@ -25,6 +25,7 @@ public:
         // actionlib::SimpleActionClient<control_msgs::GripperCommandAction> gripper_group;
         ros::Publisher goal_status_pub;
         ros::Publisher gripper_publisher;
+        ros::NodeHandle nh;
 };
 
 #endif // ARM_MOTION_H

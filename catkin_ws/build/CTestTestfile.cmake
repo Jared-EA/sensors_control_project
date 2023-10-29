@@ -6,6 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("fetch_moveit_config")
-subdirs("fetchit_challenge")
-subdirs("fetch_gazebo")
+subdirs("fetch_gazebo/fetch_simulation")
+subdirs("fetch_gazebo/fetch_gazebo")
 subdirs("project2fetch")

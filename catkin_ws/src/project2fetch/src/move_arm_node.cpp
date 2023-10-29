@@ -26,8 +26,9 @@
 
 // #include "gripper.cpp"
 
-double endEffLength = 0.15;
-
+const double endEffLength = 0.2;
+const double startHeightOffset = 0.15;
+const double offset = 0.03;
 
 // Create a structure for the target points
 struct TargetPoint {
@@ -35,6 +36,23 @@ struct TargetPoint {
     double y;
     double z;
 };
+
+std::vector<TargetPoint> receivedTargets;
+std::vector<TargetPoint> targets;
+
+void topicCallback(const geometry_msgs::Point::ConstPtr& msg) {
+    TargetPoint receivedTarget;
+    receivedTarget.x = msg->x;
+    receivedTarget.y = msg->y;
+    receivedTarget.z = msg->z;
+    receivedTargets.push_back(receivedTarget);
+
+    // Print the received point using ROS_INFO
+    static int pointCounter = 1; // static to retain its value across function calls
+    ROS_INFO("Point %d: x = %f, y = %f, z = %f", pointCounter, receivedTarget.x, receivedTarget.y, receivedTarget.z);
+    pointCounter++;
+}
+
 
 int main(int argc, char **argv)
 {
@@ -48,18 +66,26 @@ int main(int argc, char **argv)
 
     ROS_INFO("Main loop started");
 
-    // List of target points
-    std::vector<TargetPoint> targets = {
-        {0.7, -0.25, 0.95},
-        {0.6, 0.0,  0.95},
-        // Add more points as needed
-    };
-    // Make sure there is a drop-off point for each target point
+    ros::Subscriber sub = nh.subscribe("position", 2, topicCallback);
+
     std::vector<TargetPoint> dropOffPoints = {
-        {0.1, -0.7, 0.95},
-        {0.0, -0.7, 0.95}
+        {0.0, -0.7, 0.0},
+        {0.1, -0.7, 0.0}
         
     };
+
+    // Wait until two messages are received
+    ros::Rate rate(10);  // Checking at 10 Hz
+    while (ros::ok() && receivedTargets.size() < 2) {
+        ros::spinOnce();
+        rate.sleep();
+    }
+
+
+    for (auto &target : receivedTargets) {
+        targets.push_back(target);
+    }
+    receivedTargets.clear(); // Clear after copying to avoid redundancy.
 
     // Check that there are equal numbers of target points and drop-off points
     if (targets.size() != dropOffPoints.size()) {
@@ -67,26 +93,14 @@ int main(int argc, char **argv)
         return 1;
     }
     
-
-    // GripperController gripper;  // Create gripper controller
-
-    
-
-    // Create a publisher for goal status
-    // ros::Publisher goal_status_pub = nh.advertise<project2fetch::goalStatus>("goal_status", 10);
-    // Create a publisher for target points
-    // ros::Publisher target_points_pub = nh.advertise<geometry_msgs::Point>("target_points", 10);
-    // Create a publisher for gripper position
-    // ros::Publisher gripper_publisher = nh.advertise<control_msgs::GripperCommandActionGoal>("/gripper_controller/gripper_action/goal",1);
-    
     // Create an instance of ArmMotion
-    ArmMotion arm_motion;
+    ArmMotion arm_motion(nh);
 
     // Start a spin thread
     ros::AsyncSpinner spinner(1);
     spinner.start();
 
-    arm_motion.moveOrientationPose();
+    arm_motion.moveOrientationPose("Orientation Set Down");
 
     for (size_t i = 0; i < targets.size(); i++) {
         // Convert Points to geometry_msgs::Pose
@@ -95,21 +109,21 @@ int main(int argc, char **argv)
         geometry_msgs::Pose initial_dropoff_pose;
         geometry_msgs::Pose dropoff_pose;
 
-        initial_pose.position.x = targets[i].x;
+        initial_pose.position.x = targets[i].x-offset;
         initial_pose.position.y = targets[i].y;
-        initial_pose.position.z = targets[i].z + 0.15+endEffLength;
+        initial_pose.position.z = targets[i].z + startHeightOffset + endEffLength;
 
-        target_pose.position.x = targets[i].x;
+        target_pose.position.x = targets[i].x-offset;
         target_pose.position.y = targets[i].y;
-        target_pose.position.z = targets[i].z+endEffLength;
-
-        dropoff_pose.position.x = dropOffPoints[i].x;
-        dropoff_pose.position.y = dropOffPoints[i].y;
-        dropoff_pose.position.z = dropOffPoints[i].z + endEffLength;
+        target_pose.position.z = targets[i].z + endEffLength;
 
         initial_dropoff_pose.position.x = dropOffPoints[i].x;
         initial_dropoff_pose.position.y = dropOffPoints[i].y;
-        initial_dropoff_pose.position.z = dropOffPoints[i].z + 0.15 + endEffLength;
+        initial_dropoff_pose.position.z = initial_pose.position.z;
+
+        dropoff_pose.position.x = dropOffPoints[i].x;
+        dropoff_pose.position.y = dropOffPoints[i].y;
+        dropoff_pose.position.z = target_pose.position.z;
         
 
         // Move to target
@@ -126,12 +140,12 @@ int main(int argc, char **argv)
         ROS_INFO("Move completed to point 1");
 
         // Close gripper
-        if (!arm_motion.controlGripper("closed")) {
+        arm_motion.controlGripper("close");
+
+        if (!arm_motion.moveToTarget(initial_pose)) {
             ROS_ERROR("Failed to move to target");
             continue;
         }
-
-        ROS_INFO("Gripper Closed");
 
         if (!arm_motion.moveToTarget(initial_dropoff_pose)) {
             ROS_ERROR("Failed to move to target");
@@ -145,19 +159,12 @@ int main(int argc, char **argv)
         ROS_INFO("Move completed to point 2");
 
         arm_motion.controlGripper("open");
-        ROS_INFO("Gripper Open");
 
-        // Move to drop-off point
-        // if (!arm_motion.moveToTarget(dropoff_pose)) {
-        //     ROS_ERROR("Failed to move to drop-off point");
-        //     continue;
-        // }
+        if (!arm_motion.moveToTarget(initial_dropoff_pose)) {
+            ROS_ERROR("Failed to move to target");
+            continue;
+        }
 
-        // Open gripper
-        // if (!arm_motion.controlGripper("open")) {
-        //     ROS_ERROR("Failed to open gripper");
-        //     continue;
-        // }
     }
 
     // Shutdown ROS

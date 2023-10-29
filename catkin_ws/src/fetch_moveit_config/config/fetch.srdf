@@ -51,8 +51,39 @@
         <joint name="wrist_flex_joint" value="-1.50707" />
         <joint name="wrist_roll_joint" value="0" />
     </group_state>
+    <group_state name="Orientation Set Down" group="robot_arm">
+        <joint name="elbow_flex_joint" value="0" />
+        <joint name="forearm_roll_joint" value="0" />
+        <joint name="shoulder_lift_joint" value="0" />
+        <joint name="shoulder_pan_joint" value="1.6056" />
+        <joint name="upperarm_roll_joint" value="0" />
+        <joint name="wrist_flex_joint" value="1.5708" />
+        <joint name="wrist_roll_joint" value="0" />
+    </group_state>
+    <group_state name="Orientation Set Down" group="arm_w/torso">
+        <joint name="elbow_flex_joint" value="0" />
+        <joint name="forearm_roll_joint" value="0" />
+        <joint name="shoulder_lift_joint" value="0" />
+        <joint name="shoulder_pan_joint" value="1.6056" />
+        <joint name="torso_lift_joint" value="0.3861" />
+        <joint name="upperarm_roll_joint" value="0" />
+        <joint name="wrist_flex_joint" value="1.5708" />
+        <joint name="wrist_roll_joint" value="1.5708" />
+    </group_state>
+    <group_state name="Orientation Set Forward" group="arm_w/torso">
+        <joint name="elbow_flex_joint" value="0" />
+        <joint name="forearm_roll_joint" value="-1.5708" />
+        <joint name="shoulder_lift_joint" value="0" />
+        <joint name="shoulder_pan_joint" value="1.6056" />
+        <joint name="torso_lift_joint" value="0.3861" />
+        <joint name="upperarm_roll_joint" value="0" />
+        <joint name="wrist_flex_joint" value="1.5708" />
+        <joint name="wrist_roll_joint" value="1.5708" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper" parent_link="wrist_roll_link" group="gripper" parent_group="robot_arm" />
+    <end_effector name="gripper" parent_link="wrist_roll_link" group="gripper" parent_group="arm_w/torso" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="virtual joint" type="fixed" parent_frame="world" child_link="base_link" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="l_wheel_joint" />
     <passive_joint name="r_wheel_joint" />

@@ -14,7 +14,11 @@ find_package(catkin REQUIRED COMPONENTS
   moveit_core
   moveit_ros_planning
   moveit_ros_planning_interface
-  message_generation
+  # message_generation
+  # pcl_ros
+  # image_transport
+  # cv_bridge
+  # geometry_msgs
 )
 find_package(Eigen3 REQUIRED)
 
@@ -113,7 +117,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES project2fetch
-#  CATKIN_DEPENDS roscpp sensor_msgs std_msgs
+#  CATKIN_DEPENDS roscpp  sensor_msgs  std_msgs  moveit_core  moveit_ros_planning  moveit_ros_planning_interface  message_generation  pcl_ros  image_transport  cv_bridge  geometry_msgs
 #  DEPENDS system_lib
   CATKIN_DEPENDS message_runtime
 )
@@ -146,6 +150,7 @@ include_directories(
 # add_executable(robot_main src/main.cpp src/fetchrobot.cpp)
 add_executable(move_robot src/move_arm_node.cpp src/arm_motion.cpp)
 add_executable(gripper_node src/gripper_node.cpp)
+# add_executable(object_detection src/object_detection.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -157,6 +162,7 @@ add_executable(gripper_node src/gripper_node.cpp)
 ## same as for the library above
 add_dependencies(move_robot ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(gripper_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(object_detection ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 
@@ -171,6 +177,11 @@ target_link_libraries(move_robot
 target_link_libraries(gripper_node
   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
 )
+
+# target_link_libraries(object_detection
+#   ${catkin_LIBRARIES} ${Boost_LIBRARIES}
+# )
+
 #############
 ## Install ##
 #############

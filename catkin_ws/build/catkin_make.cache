@@ -1,2 +1,2 @@
-fetch_gazebo/fetch_gazebo:fetch_gazebo/fetch_simulation:fetch_gazebo/fetchit_challenge:fetch_moveit_config:project2fetch
--DCATKIN_DEVEL_PREFIX=/home/fucklinux/sensors/sensors_control_project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/fucklinux/sensors/sensors_control_project/catkin_ws/install -G Unix Makefiles
+fetch_gazebo/fetch_gazebo:fetch_gazebo/fetch_simulation:fetch_moveit_config:project2fetch
+-DCATKIN_DEVEL_PREFIX=/home/jared/sensors_control_project/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jared/sensors_control_project/catkin_ws/install -G Unix Makefiles
