@@ -42,7 +42,6 @@ arm_joint_names = ["shoulder_pan_joint", "shoulder_lift_joint", "upperarm_roll_j
               "elbow_flex_joint", "forearm_roll_joint", "wrist_flex_joint", "wrist_roll_joint"]
 arm_intermediate_positions  = [1.6056, 0.0, 0.0, -1.5608, 0.0, -1.5608, 0.0]
 arm_joint_positions  = [1.6056, 1.5180, 0.0, -1.5608, 0.0, -1.5608, 0.0]
-arm_end_positions = [1.6056, 1.5180, 3.1415, -1.6789, 0.0, -1.5608, 0.0]
 
 head_joint_names = ["head_pan_joint", "head_tilt_joint"]
 head_joint_positions = [0.0, 0.35]
@@ -99,11 +98,7 @@ if __name__ == "__main__":
     trajectory.points[2].velocities =  [0.0] * len(arm_joint_positions)
     trajectory.points[2].accelerations = [0.0] * len(arm_joint_positions)
     trajectory.points[2].time_from_start = rospy.Duration(7.5)
-    trajectory.points.append(JointTrajectoryPoint())
-    trajectory.points[3].positions = arm_end_positions
-    trajectory.points[3].velocities =  [0.0] * len(arm_joint_positions)
-    trajectory.points[3].accelerations = [0.0] * len(arm_joint_positions)
-    trajectory.points[3].time_from_start = rospy.Duration(11.0)
+
 
     arm_goal = FollowJointTrajectoryGoal()
     arm_goal.trajectory = trajectory
