@@ -45,7 +45,7 @@ arm_joint_positions  = [1.6056, 1.5180, 0.0, -1.5608, 0.0, -1.5608, 0.0]
 arm_end_positions = [1.6056, 1.5180, 3.1415, -1.6789, 0.0, -1.5608, 0.0]
 
 head_joint_names = ["head_pan_joint", "head_tilt_joint"]
-head_joint_positions = [0.0, 0.2]
+head_joint_positions = [0.0, 0.35]
 
 if __name__ == "__main__":
     rospy.init_node("prepare_simulated_robot")

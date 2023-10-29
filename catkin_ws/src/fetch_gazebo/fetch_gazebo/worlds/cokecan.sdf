@@ -89,7 +89,7 @@
       <static>1</static>
       <link name='link'>
         <collision name='surface'>
-          <pose frame=''>0 0 0.66 0 -0 0</pose>
+          <pose frame=''>0 0 0.70 0 -0 0</pose>
           <geometry>
             <box>
               <size>0.913 0.913 0.04</size>
@@ -113,7 +113,7 @@
           <pose frame=''>0 0 0.37 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.042 0.042 0.70</size>
+              <size>0.042 0.042 0.66</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -162,13 +162,13 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>1.0 0.0 0 0 -0 0</pose>
+      <pose frame=''>1 0 0 0 -0 0</pose>
     </model>
     <model name='cafe_table_0'>
       <static>1</static>
       <link name='link'>
         <collision name='surface'>
-          <pose frame=''>0 0 0.66 0 -0 0</pose>
+          <pose frame=''>0 0 0.70 0 -0 0</pose>
           <geometry>
             <box>
               <size>0.913 0.913 0.04</size>
@@ -192,7 +192,7 @@
           <pose frame=''>0 0 0.37 0 -0 0</pose>
           <geometry>
             <box>
-              <size>0.042 0.042 0.70</size>
+              <size>0.042 0.042 0.66</size>
             </box>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -241,7 +241,7 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>0.0 -1.0 0 0 -0 0</pose>
+      <pose frame=''>0 -1 0 0 -0 0</pose>
     </model>
     <model name='Coke'>
       <static>1</static>
@@ -289,43 +289,52 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>0.8 -0.25 0.70 0 -0 0</pose>
+      <pose frame=''>0.70 -0.25 0.7 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>298 529000000</sim_time>
-      <real_time>312 70259589</real_time>
-      <wall_time>1697351099 70000222</wall_time>
-      <iterations>298529</iterations>
+      <sim_time>3830 557000000</sim_time>
+      <real_time>60 915386478</real_time>
+      <wall_time>1698551842 118839816</wall_time>
+      <iterations>56167</iterations>
       <model name='Coke'>
-        <pose frame=''>0.8 -0.25 0.70 0 -0 0</pose>
+        <pose frame=''>0.70 -0.25 0.7 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='body'>
-          <pose frame=''>0.8 -0.25 0.70 0 -0 0</pose>
+          <pose frame=''>0.70 -0.25 0.7 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='cafe_table'>
-        <pose frame=''>1.0 0 0 0 -0 0</pose>
+        <pose frame=''>1 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>1.0 0 0 0 -0 0</pose>
+          <pose frame=''>1 0 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='cafe_table_0'>
-        <pose frame=''>0.0 -1.0 0 0 -0 0</pose>
+        <pose frame=''>0 -1 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0.0 -1.0 0 0 -0 0</pose>
+          <pose frame=''>0 -1 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
-
+      </model>
+      <model name='demo_cube'>
+        <pose frame=''>0.70 0.20 0.747999 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.70 0.20 0.747999 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 -0 0 -0 0</acceleration>
+          <wrench>0 0 -0 0 -0 0</wrench>
+        </link>
       </model>
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
@@ -343,10 +352,76 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-9.80103 2.07688 5.43435 0 0.479643 -0.071806</pose>
+        <pose frame=''>0.665565 -2.19998 1.83148 0 0.567643 1.35538</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    <model name='demo_cube'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.25</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.06</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>30</mu>
+                <mu2>30</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>100</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.002</min_depth>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.06</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Blue</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+      <pose frame=''>0.70 0.20 0 0 -0 0</pose>
+    </model>
   </world>
 </sdf>
