@@ -29,6 +29,7 @@
 const double endEffLength = 0.2;
 const double startHeightOffset = 0.15;
 const double offset = 0.03;
+const double yoffset = 0.02;
 
 // Create a structure for the target points
 struct TargetPoint {
@@ -110,19 +111,19 @@ int main(int argc, char **argv)
         geometry_msgs::Pose dropoff_pose;
 
         initial_pose.position.x = targets[i].x-offset;
-        initial_pose.position.y = targets[i].y;
+        initial_pose.position.y = targets[i].y + yoffset;
         initial_pose.position.z = targets[i].z + startHeightOffset + endEffLength;
 
-        target_pose.position.x = targets[i].x-offset;
-        target_pose.position.y = targets[i].y;
+        target_pose.position.x = initial_pose.position.x;
+        target_pose.position.y = initial_pose.position.y;
         target_pose.position.z = targets[i].z + endEffLength;
 
         initial_dropoff_pose.position.x = dropOffPoints[i].x;
         initial_dropoff_pose.position.y = dropOffPoints[i].y;
         initial_dropoff_pose.position.z = initial_pose.position.z;
 
-        dropoff_pose.position.x = dropOffPoints[i].x;
-        dropoff_pose.position.y = dropOffPoints[i].y;
+        dropoff_pose.position.x = initial_dropoff_pose.position.x;
+        dropoff_pose.position.y = initial_dropoff_pose.position.y;
         dropoff_pose.position.z = target_pose.position.z;
         
 

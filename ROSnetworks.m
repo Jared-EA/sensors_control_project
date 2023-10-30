@@ -1,10 +1,7 @@
-
 % load using gazebo
 close all
 
-rosshutdown;
-
-% Initialise the ROS node
+%% Initialise the ROS node
 rosinit('NodeName', 'ObjectDetection_node')
 
 setenv('ROS_IP','192.168.0.227'); % Jared's IP, also set correct IP on WSL through 
